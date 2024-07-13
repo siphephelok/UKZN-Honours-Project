@@ -1,0 +1,43 @@
+﻿@model WebApplication1.Models.Clinic
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1></h1>
+
+<h4>Add a new Clinic</h4>
+<hr />
+<div class="row">
+    <div class="col-md-8">
+        <form asp-action="Create" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="ClinicName" class="control-label">Clinic Name</label>
+                <input asp-for="ClinicName" class="form-control" />
+                <span asp-validation-for="ClinicName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ClinicLocation" class="control-label">Clinic Location</label>
+                <input asp-for="ClinicLocation" class="form-control" />
+                <span asp-validation-for="ClinicLocation" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="IsActive" /> @Html.DisplayNameFor(model => model.IsActive)
+                </label>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to Clinics</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

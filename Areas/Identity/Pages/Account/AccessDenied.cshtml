@@ -1,0 +1,58 @@
+﻿@page
+@model AccessDeniedModel
+@{
+    ViewData["Title"] = "Access denied";
+}
+
+ 
+ 
+    <div class="container mt-4">
+        <h1 class="text-danger">Access Denied</h1>
+        <p class="lead">You do not have the necessary permissions to access this resource.</p>
+
+        <h2>Welcome to Our Medical Health Repository System</h2>
+        <p>
+            Our system is designed to provide secure and efficient access to medical health records for authorized users. Protecting patient data and maintaining privacy is our highest priority.
+        </p>
+
+        <h3>Why Access is Denied</h3>
+        <ul>
+            <li><strong>Unauthorized Access</strong>: You do not have the necessary permissions to access this resource.</li>
+            <li><strong>Restricted Area</strong>: You are trying to access a restricted section of the repository.</li>
+        </ul>
+
+        <h3>How to Gain Access</h3>
+        <ol>
+            <li>
+                <strong>Verify Permissions</strong>:
+                <ul>
+                    <li>Ensure that your current role has the required permissions for this resource.</li>
+                </ul>
+            </li>
+            <li>
+                <strong>Contact a Clinical Administrator</strong>:
+                <ul>
+                    <li>Reach out to a clinical administrator to request the necessary permissions.</li>
+                    <li>Provide your email and details about the resource you are trying to access.</li>
+                </ul>
+            </li>
+        </ol>
+
+        <div class="alert alert-info">
+        <p>If you continue to experience issues, please contact our support team at <a href="mailto:support@ukzn.ac.za">support@ukzn.ac.za</a>.</p>
+        </div>
+
+        <div class="alert alert-secondary">
+            <h4>Contact Information for Clinical Administrators</h4>
+            <p>You can reach the clinical administrators at:</p>
+            <ul>
+            <li>Dr. Naidoo: <a href="mailto:support@ukzn.ac.za">support@ukzn.ac.za</a></li>
+            <li>Dr. Pillay: <a href="mailto:support@ukzn.ac.za">support@ukzn.ac.za</a></li>
+            </ul>
+        </div>
+
+    <div class="alert alert-success">
+        <h4>Stay Informed</h4>
+        <p>Brush up on your knowledge of trending diseases by visiting our  <a href="https://wwwnc.cdc.gov/eid/" target="_blank">CDC's Emerging Infectious Diseases</a> page.</p>
+    </div>
+    </div>

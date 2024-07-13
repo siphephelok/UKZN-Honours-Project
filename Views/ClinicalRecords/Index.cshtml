@@ -1,0 +1,174 @@
+﻿@model IEnumerable<WebApplication1.Models.ClinicalRecord>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Clinical Records</h1>
+
+<p>
+    <button onclick="location.href='@Url.Action("Create", "ClinicalRecords")'" class="btn btn-primary mb-2">Create a New Clinical Record </button>
+</p>
+<div class="container">
+    <form method="post" action="/ClinicalRecords/Search">
+        <div class="form-row row">
+            <div class="col-md-3">
+                <select class="form-control mb-2" id="searchCriteria" name="searchCriteria">
+                    <option value="patientName">Patient Name</option>
+                    <option value="patientLastName">Patient Last Name</option>
+                    <option value="doctor">DoctorName</option>
+                    <option value="fileName">File Name</option>
+                    <option value="idNumber">ID Number</option>
+                </select>
+            </div>
+            <div class="col-md-3">
+                <input type="text" class="form-control mb-2" id="searchTerm" name="searchTerm" placeholder="Enter search term" minlength="3" />
+                <small class="form-text text-muted"><strong>Minimum 3 characters required.</strong></small>
+            </div>
+            <div class="col-md-3">
+                <button type="submit" class="btn btn-primary mb-2">Search</button>
+            </div>
+
+        </div>
+
+    </form>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <p></p>
+    <div class="container">
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>
+                            
+                        </th>
+                        <th>
+                      File Name
+                        </th>
+                        <th>
+                           Disorder 
+                        </th>
+                        <th>
+                          Clinical Contact Start Date 
+                        </th>
+                        <th>
+                           Date od Contact Termination
+                        </th>
+                        <th>
+                           Record Created Date
+                        </th>
+                        <th>
+                           Relevant Information
+                        </th>
+                        <th>
+                           Created By 
+                        </th>
+                        <th>
+                           Updated By
+                        </th>
+                        <th>
+                            Updated Date 
+                        </th>
+                        <th>
+                            Tutor Email Address 
+                        </th>
+  
+                        <th>
+                            @Html.DisplayNameFor(model => model.AssessmentFindings)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Referral)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.History)
+                        </th>
+   @*                      <th>
+                            @Html.DisplayNameFor(model => model.Clinic)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Patient)
+                        </th> *@
+                        <th>
+                          Document
+                        </th>
+      @*                   <th>
+                            @Html.DisplayNameFor(model => model.DoctorID)
+                        </th> *@
+
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                <a asp-action="Edit" asp-route-id="@item.ClinicalRecordID" class="btn btn-primary">Edit</a>
+                           
+                                <a asp-action="Details" asp-route-id="@item.ClinicalRecordID" class="btn btn-primary">Details</a>
+                        
+                                <a asp-action="Delete" asp-route-id="@item.ClinicalRecordID" class="btn btn-primary">Delete</a>
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.FileName)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Disorder)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.ClinicalContactCommenced)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.ClinicalContactTerminated)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Date)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.RelevantInformation)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.CreatedBy)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.UpdatedBy)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.UpdatedDate)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.TutorEmailAddress)
+                            </td>
+                
+                            <td>
+                                @Html.DisplayFor(modelItem => item.AssessmentFindings)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Referral)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.History)
+                            </td>
+@*                             <td>
+                                @Html.DisplayFor(modelItem => item.Clinic.ClinicID)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Patient.PatientID)
+
+                            </td> *@
+                            <td>
+                                <a href="@item.FilePath" download class="btn btn-primary">Download Document </a>
+                            </td>
+                            <td>
+            
+
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>

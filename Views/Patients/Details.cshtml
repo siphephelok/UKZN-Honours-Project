@@ -1,0 +1,233 @@
+﻿@model WebApplication1.Models.Patient
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Patient Details</h1>
+
+<div>
+ 
+    <hr />
+    <dl class="row">
+        <dt class = "col-md-6">
+       First Name 
+        </dt>
+        <dd class = "col-md-6">
+            @Html.DisplayFor(model => model.PatientName)
+        </dd>
+        <dt class = "col-md-6">
+         Surname
+        </dt>
+        <dd class = "col-md-6">
+            @Html.DisplayFor(model => model.PatientLastName)
+        </dd>
+        <dt class = "col-md-6">
+         Date of Birth
+        </dt>
+
+        <dd class = "col-md-6">
+            @Html.DisplayFor(model => model.PatientDateOfBirth)
+        </dd>
+        <dt class="col-md-6">
+           Identity Number
+        </dt>
+        <dd class="col-md-6">
+            @Html.DisplayFor(model => model.IDNumber)
+        </dd>
+
+        <dt class = "col-md-6">
+           Gender
+        </dt>
+        <dd class = "col-md-6">
+            @Html.DisplayFor(model => model.PatientGender)
+        </dd>
+        <dt class = "col-md-6">
+           Address
+        </dt>
+        <dd class = "col-md-6">
+            @Html.DisplayFor(model => model.PatientAddress)
+        </dd>
+        <dt class = "col-md-6">
+           Postal Code
+        </dt>
+        <dd class = "col-md-6">
+            @Html.DisplayFor(model => model.PostalCode)
+        </dd>
+        <dt class = "col-md-6">
+          Contact Number
+        </dt>
+        <dd class = "col-md-6">
+            @Html.DisplayFor(model => model.PatientContactNumber)
+        </dd>
+        <dt class = "col-md-6">
+          Email Address
+        </dt>
+        <dd class = "col-md-6">
+            @Html.DisplayFor(model => model.PatientEmailAddress)
+        </dd>
+        <dt class = "col-md-6">
+          Employer Cell Number
+        </dt>
+        <dd class = "col-md-6">
+            @Html.DisplayFor(model => model.PatientEmployerCellNo)
+        </dd>
+        <dt class = "col-md-6">
+          Patient Occupation 
+        </dt>
+        <dd class = "col-md-6">
+            @Html.DisplayFor(model => model.PatientOccupation)
+        </dd>
+
+        <dt class = "col-md-6">
+        Spouse Name
+        </dt>
+        <dd class = "col-md-6">
+            @Html.DisplayFor(model => model.SpouseName)
+        </dd>
+        <dt class = "col-md-6">
+           Spouse Contact Number
+        </dt>
+        <dd class = "col-md-6">
+            @Html.DisplayFor(model => model.SpouseContactNo)
+        </dd>
+
+ 
+ 
+        <dt class = "col-md-6">
+          School Name
+        </dt>
+        <dd class = "col-md-6">
+            @Html.DisplayFor(model => model.School)
+        </dd>
+        <dt class = "col-md-6">
+          Grade
+        </dt>
+        <dd class = "col-md-6">
+            @Html.DisplayFor(model => model.Grade)
+        </dd>
+        <dt class = "col-md-6">
+          Teacher Name
+        </dt>
+        <dd class = "col-md-6">
+            @Html.DisplayFor(model => model.Teacher)
+        </dd>
+        <dt class = "col-md-6">
+         School Contact Number
+        </dt>
+        <dd class = "col-md-6">
+            @Html.DisplayFor(model => model.SchoolContactNo)
+        </dd>
+        <dt class = "col-md-6">
+            Fathers Details 
+        </dt>
+        <dd class = "col-md-6">
+            @Html.DisplayFor(model => model.FatherDetails)
+        </dd>
+        <dt class = "col-md-6">
+            Father's Name 
+        </dt>
+        <dd class = "col-md-6">
+            @Html.DisplayFor(model => model.FathersName)
+        </dd>
+        <dt class = "col-md-6">
+           Father's Occupation
+        </dt>
+        <dd class = "col-md-6">
+            @Html.DisplayFor(model => model.FatherOccupation)
+        </dd>
+        <dt class = "col-md-6">
+            Father's Address
+        </dt>
+        <dd class = "col-md-6">
+            @Html.DisplayFor(model => model.FatherAddress)
+        </dd>
+        <dt class = "col-md-6">
+           Father's Work Contact Number
+        </dt>
+        <dd class = "col-md-6">
+            @Html.DisplayFor(model => model.FatherWorkPhone)
+        </dd>
+        <dt class = "col-md-6">
+           Father's Cell Number
+        </dt>
+        <dd class = "col-md-6">
+            @Html.DisplayFor(model => model.FatherCellPhone)
+        </dd>
+        <dt class = "col-md-6">
+            Father's Email Address
+        </dt>
+        <dd class = "col-md-6">
+            @Html.DisplayFor(model => model.FatherEmail)
+        </dd>
+        <dt class = "col-md-6">
+           Mother's Details
+        </dt>
+        <dd class = "col-md-6">
+            @Html.DisplayFor(model => model.MotherDetails)
+        </dd>
+        <dt class = "col-md-6">
+          Mother's Name
+        </dt>
+        <dd class = "col-md-6">
+            @Html.DisplayFor(model => model.MotherName)
+        </dd>
+        <dt class = "col-md-6">
+           Mother's Occupation
+        </dt>
+        <dd class = "col-md-6">
+            @Html.DisplayFor(model => model.MotherOccupation)
+        </dd>
+        <dt class = "col-md-6">
+            Mother's' Address
+        </dt>
+        <dd class = "col-md-6">
+            @Html.DisplayFor(model => model.MotherAddress)
+        </dd>
+        <dt class = "col-md-6">
+            Mother's CellNumber
+        <dd class = "col-md-6">
+            @Html.DisplayFor(model => model.MotherCellphone)
+        </dd>
+        <dt class = "col-md-6">
+            Mother's Work Phone
+        </dt>
+        <dd class = "col-md-6">
+            @Html.DisplayFor(model => model.MotherWorkPhone)
+        </dd>
+        <dt class = "col-md-6">
+            Mother's Email
+        </dt>
+        <dd class = "col-md-6">
+            @Html.DisplayFor(model => model.MotherEmail)
+        </dd>
+        <dt class="col-md-6">
+            Created by
+        </dt>
+        <dd class="col-md-6">
+            @Html.DisplayFor(model => model.CreatedBy)
+        </dd>
+        <dt class="col-md-6">
+            Last Updated By
+        </dt>
+        <dd class="col-md-6">
+            @Html.DisplayFor(model => model.UpdatedBy)
+        </dd>
+        <dt class="col-md-6">
+            Created Date
+        </dt>
+        <dd class="col-md-6">
+            @Html.DisplayFor(model => model.CreatedDate)
+        </dd>
+        <dt class="col-md-6">
+            Last Updated Date
+        </dt>
+        <dd class="col-md-6">
+            @Html.DisplayFor(model => model.UpdatedDate)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.PatientID" class="btn btn-primary">Edit</a> |
+    <a asp-action="Index" class="btn btn-primary">Back to Patient List</a>
+</div>

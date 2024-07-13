@@ -1,0 +1,95 @@
+﻿@model IEnumerable<WebApplication1.Models.Patient>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>
+    Patients
+    
+</h1>
+<p>
+    <button onclick="location.href='@Url.Action("Create", "Patients")'" class="btn btn-primary mb-2">Create New</button>
+</p>
+<div class="container">
+    <form method="post" action="/Patients/Search">
+        <div class="form-row row">
+            <div class="col-md-3">
+                <select class="form-control mb-2" id="searchCriteria" name="searchCriteria">
+                    <option value="patientName">Patient Name</option>
+                    <option value="patientLastName">Patient Last Name</option>
+                    <option value="email">Email</option>
+                    <option value="contactNumber">Patient Contact Number</option>
+                    <option value="idNumber">ID Number</option>
+                </select>
+            </div>
+            <div class="col-md-3">
+                <input type="text" class="form-control mb-2" id="searchTerm" name="searchTerm" placeholder="Enter search term" minlength="3" />
+                <small class="form-text text-muted"><strong>Minimum 3 characters required.</strong></small>
+            </div>
+            <div class="col-md-3">
+                <button type="submit" class="btn btn-primary mb-2">Search</button>
+            </div>  
+            
+        </div>
+        
+    </form>
+    
+</div>
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<div class="container">
+    <div class="table-responsive">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th> </th>
+                    <th>Patient Name</th>
+                    <th>Last Name</th>
+                    <th>Date of Birth</th>
+                    <th>Gender</th>
+                    <th>Address</th>
+                    <th>Postal Code</th>
+                    <th>Contact Number</th>
+                    <th>Email Address</th>
+                    <th>Employer Cell No</th>
+                    <th>Occupation</th>
+                    <th>Created By</th>
+                    <th>Updated By</th>
+                    <th>Created Date</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            <a asp-action="Edit" asp-route-id="@item.PatientID" class="btn btn-primary">Edit</a>
+                            <a asp-action="Details" asp-route-id="@item.PatientID" class="btn btn-primary">View</a>
+                            @* <a asp-action="Delete" asp-route-id="@item.PatientID">Delete</a> *@
+                        </td>
+                        <td>@Html.DisplayFor(modelItem => item.PatientName)</td>
+                        <td>@Html.DisplayFor(modelItem => item.PatientLastName)</td>
+                        <td>@Html.DisplayFor(modelItem => item.PatientDateOfBirth)</td>
+                        <td>@Html.DisplayFor(modelItem => item.PatientGender)</td>
+                        <td>@Html.DisplayFor(modelItem => item.PatientAddress)</td>
+                        <td>@Html.DisplayFor(modelItem => item.PostalCode)</td>
+                        <td>@Html.DisplayFor(modelItem => item.PatientContactNumber)</td>
+                        <td>@Html.DisplayFor(modelItem => item.PatientEmailAddress)</td>
+                        <td>@Html.DisplayFor(modelItem => item.PatientEmployerCellNo)</td>
+                        <td>@Html.DisplayFor(modelItem => item.PatientOccupation)</td>
+                        <td>@Html.DisplayFor(modelItem => item.CreatedBy)</td>
+                        <td>@Html.DisplayFor(modelItem => item.UpdatedBy)</td>
+                        <td>@Html.DisplayFor(modelItem => item.CreatedDate)</td>
+
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+

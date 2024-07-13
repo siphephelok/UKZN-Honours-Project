@@ -1,0 +1,19 @@
+{
+  "dependencies": {
+    "mssql1": {
+      "serviceConnectorResourceId": "",
+      "secretStore": null,
+      "type": "mssql.onprem",
+      "connectionId": "ConnectionStrings:DefaultConnection",
+      "dynamicId": null
+    },
+    "storage1": {
+      "serviceConnectorResourceId": "/subscriptions/[parameters('subscriptionId')]/resourceGroups/[parameters('resourceGroupName')]/providers/Microsoft.Web/sites/MedicalDocumentRepositorySystyem/providers/Microsoft.ServiceLinker/linkers/BlobStorageSettingsConnectionString_6DF5FDCBC4, /subscriptions/5a31f263-3960-4161-8fb6-bbfae5905692/resourceGroups/CDRSRecords/providers/Microsoft.Web/sites/MedicalDocumentRepositorySystyem/providers/Microsoft.ServiceLinker/linkers/BlobStorageSettingsConnectionString_1A9894F657",
+      "secretStore": "AzureAppSettings",
+      "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourceGroups/[parameters('resourceGroupName')]/providers/Microsoft.Storage/storageAccounts/clinicalrecords",
+      "type": "storage.azure",
+      "connectionId": "BlobStorageSettings:ConnectionString",
+      "dynamicId": null
+    }
+  }
+}

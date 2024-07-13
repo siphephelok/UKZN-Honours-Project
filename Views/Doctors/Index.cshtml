@@ -1,0 +1,64 @@
+﻿@model IEnumerable<WebApplication1.Models.Doctor>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Doctors</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-primary">Create New Doctor </a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                
+            </th>
+            <th>
+               Doctor Type
+            </th>
+            <th>
+               Doctor Name
+            </th>
+            <th>
+               Institution
+            </th>
+            <th>
+               Contact Number
+            </th>
+            <th>
+               Email Address
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.DoctorID" class="btn btn-primary">Edit</a>  
+                    <a asp-action="Details" asp-route-id="@item.DoctorID" class="btn btn-primary">View</a> 
+                    <a asp-action="Delete" asp-route-id="@item.DoctorID" class="btn btn-primary">Delete</a>
+                </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DoctorType)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DoctorName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DoctorInstitution)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DoctorContactNo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DoctorEmailAddress)
+            </td>
+    
+        </tr>
+}
+    </tbody>
+</table>
